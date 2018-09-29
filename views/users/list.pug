@@ -1,0 +1,16 @@
+
+extends ../layout
+
+block content
+  h1 Curso
+    div
+      h3 Operaciòn
+        form(action='/users/suma', method='POST')
+      p
+        | Valor 1: 
+        input(type='text', name='title', value='')
+        |          Valor 2: 
+        input(type='text', name='year', value='')
+      input(type='submit', value='Suma')
+      input(type='submit', value='Divisiòn')
+  

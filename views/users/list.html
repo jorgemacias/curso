@@ -1,0 +1,45 @@
+<%- include('../header.html'); -%>
+
+<div class="row">
+
+    <h3>Lista de usuarios</h3>
+</div>
+
+<div class="row">
+    <form class="form-inline" action="/users/create" method="post">
+        <div class="form-group mb-2">
+            <label for="staticEmail2" >Nombre</label>
+            <input type="text" class="form-control-plaintext" id="staticEmail2" value="" placeholder="Escriba su nombre">
+        </div>
+        <div class="form-group mb-2">
+            <label for="staticEmail2" >Email</label>
+            <input type="text" class="form-control-plaintext" id="staticEmail2" value="" placeholder="Escriba contraseña">
+        </div>
+        <div class="form-group mb-2">
+            <label for="inputPassword2">Contraseña</label>
+            <input type="password" class="form-control-plaintext" id="inputPassword2" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Agregar</button>
+    </form>
+</div>
+
+<div class="row">
+    <div id="gridbox" style="width:100%; height:400px; background-color:white;"></div>
+</div>
+<script>
+    var myGrid;
+    myGrid = new dhtmlXGridObject('gridbox');
+    myGrid.setImagePath("dhtmlx/codebase/imgs/");
+    myGrid.setHeader("Borrar,Editar,Nombre,Email");
+    myGrid.attachHeader("#rspan,#rspan,#text_filter,#text_filter");
+    myGrid.setInitWidths("50,50,*,*");
+    myGrid.enableAutoWidth(true);
+    myGrid.setColAlign("center,center,left,left");
+    myGrid.setColTypes("ro,ro,ro,ro");
+    myGrid.setColSorting("na,na,str,str");
+    myGrid.init();
+    myGrid.enableSmartRendering(true);
+    // myGrid.load("../common/500.xml");
+
+</script>
+<%- include('../footer.html'); -%>

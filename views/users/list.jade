@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  -var firstUser = users[0] || undefined;
+  if firstUser
+    div
+      h1 Users
+      table.table.table-hover
+        thead
+          tr
+            each value, key in firstUser
+              th=key
+        tbody
+          each user in users
+            tr
+              each value, key in user
+                td=value
+  
